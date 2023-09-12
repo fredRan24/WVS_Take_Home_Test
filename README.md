@@ -16,6 +16,8 @@ Go to : https://nextjs.org/docs/getting-started/installation and follow the step
 2. **Clone the Repository**:  
 Got to: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository and follow the steps to clone my repo (You alread know this though)
 
+My HTTP clone link: https://github.com/fredRan24/WVS_Take_Home_Test.git
+
 3. **Navigate to the Repository**: 
 
 4. **Setting Up Environment Variables**:  
