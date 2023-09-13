@@ -1,24 +1,26 @@
-//imports
+// Imports
 import styled from 'styled-components';
 import Link from "next/link"
 
-//Styled Components
+// Styled Components
+// Component for displaying a distinct project box
 export const ProjectBox = styled.div`
     display: block;
-    width: calc(100% - 4rem);  // Adjust the width to account for padding (2rem on each side).
-    box-sizing: border-box;  // This ensures padding and width is included in the total width
+    width: calc(100% - 4rem);
+    box-sizing: border-box;
     padding: 0.5rem 1rem;
-    background-color: #F5A623;  // Darker shade of orange for each project box.
+    background-color: #F5A623;
     color: #fff;
     text-align: left;
     border-radius: 5px;
-    border: 1px solid black;  // Black outline for the boxes.
+    border: 1px solid black;
 
     &:hover {
-        background-color: #FFB451;  // Lighter than the box but darker than the container's color on hover.
+        background-color: #FFB451;
     }
 `;
 
+// Container for filter dropdowns or buttons to help refine project search or view
 export const FiltersContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -26,29 +28,31 @@ export const FiltersContainer = styled.div`
     margin-bottom: 1rem;
 `;
 
+// Dropdown component for selecting filters
 export const FilterDropdown = styled.select`
-    padding: 0.3rem 0.5rem; // Reduced vertical padding to make the box shorter
-    margin-left: 8px; // Move it away a bit from the text to its left
+    padding: 0.3rem 0.5rem;
+    margin-left: 8px;
     border-radius: 5px;
-    background-color: #F5A623; // Darker orange for the background
-    color: #000; // Changed text to black
-    border: 1px solid black; // Black outline for the box
+    background-color: #F5A623;
+    color: #000;
+    border: 1px solid black;
 
     &:hover {
-        background-color: #FFB451; // Medium orange on hover
+        background-color: #FFB451;
     }
 
     &:focus {
         outline: none;
-        border-color: black; // Keep the black border on focus
-        box-shadow: 0 0 5px rgba(0,0,0,0.2); // Optional: you can add a subtle shadow for an additional focus indicator if desired
+        border-color: black;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
     }
 `;
 
+// Link component specifically styled for projects, ensuring consistent appearance
 export const ProjectLink = styled(Link)`
     display: inline-block;
-    border-radius: 5px;   
+    border-radius: 5px;
     color: black;
-    text-align: left;    
+    text-align: left;
     text-decoration: none;
 `;

@@ -1,5 +1,5 @@
-//As we use react hooks here with the /app (not /pages from pre NEXT.js 13) 
-"use client"
+// As we use react hooks here with the /app (not /pages from pre NEXT.js 13)
+"use client";
 
 // React hooks and other imports
 import { useState, useEffect } from 'react';
@@ -19,12 +19,11 @@ import {
     FilterDropdown,
     ProjectLink
 } from '../styles/projectList.jsx';
-    
 
 // Main component representing the Home page
 export default function Home() {
     // State variables for storing data and filters
-    const [data, setData] = useState({projects: []});
+    const [data, setData] = useState({ projects: [] });
     const [countryFilter, setCountryFilter] = useState('');
     const [animalFilter, setAnimalFilter] = useState('');
     const [uniqueCountries, setUniqueCountries] = useState([]);
@@ -56,7 +55,7 @@ export default function Home() {
             </div>
         );
     }
-    
+
     // Main render after data is loaded
     return (
         <>

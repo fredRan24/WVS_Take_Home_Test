@@ -1,7 +1,8 @@
+//Imports
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
-
+// Global styles to be applied throughout the app
 export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
@@ -12,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: inherit;       // The link will use the text color of its parent
+    color: inherit;
     text-decoration: none;
   }
 
@@ -21,21 +22,21 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// 1. Container
+// Main container for layout and styling 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    background-color: #FFC085;  
-    width: 100%;  // Ensure container takes up full width
-    max-width: 100vw;  // Ensure container doesn't overflow viewport
+    background-color: #FFC085;
+    width: 100%;
+    max-width: 100vw;
     border-radius: 10px;
-    box-sizing: border-box;  // Ensures padding doesn't increase total width
+    box-sizing: border-box;
     gap: 1rem;
 `;
 
-// 2. Header
+// Styled header component for titles and headers
 export const Header = styled.h1`
     font-size: 2.5rem;
     color: #343a40;

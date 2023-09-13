@@ -1,9 +1,11 @@
+// Get Ordinal function for UX friendly dates
 function getOrdinal(n) {
     const s = ["th", "st", "nd", "rd"],
           v = n % 100;
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
+// Util Function for formatting dates from WVS API trips
 export default function formatDate(str) {
     const date = new Date(str);
     const day = getOrdinal(date.getDate());

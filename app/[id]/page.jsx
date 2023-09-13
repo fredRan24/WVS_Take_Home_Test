@@ -61,102 +61,113 @@ export default function ProjectPage({ params }) {
         <Container>
         <div>
             <Header>{project.name}</Header>
-            {/* Display project details in separate sections for readability */}
-            <SectionBox>
-                <h2>Country:</h2> <p>{project.country}</p>
-            </SectionBox>
     
-            {/* Use `dangerouslySetInnerHTML` for preformatted text like descriptions */}
-            <SectionBox>
-                <h2>Description:</h2>
-                <div dangerouslySetInnerHTML={{ __html: project.description }} />
-            </SectionBox>
-
-            {/* Image gallery for the project */}
-            <SectionBox>
-                <h2>Images:</h2>
-                <ImageGallery>
-                    {project.images && project.images.length > 0 ? project.images.map((image, index) => (
-                        <StyledImage key={index} src={image.url} alt={`Image ${index + 1} for ${project.name}`} />
-                    )) : <p>No images available.</p>}
-                </ImageGallery>
-            </SectionBox>
-
-            {/* Details about trips related to the project */}
-            <SectionBox>
-                <h2>Trips:</h2>
-                <StyledList>
-                    {project.trips && project.trips.length > 0 ? project.trips.map((trip, index) => (
-                        <TripBox key={index}>
-                            {trip.startDate && !trip.endDate ? (
-                                <p>On-going</p>
-                            ) : (
-                                <>
-                                    <p><strong>Start Date:</strong> {trip.startDate ? formatDate(trip.startDate) : 'N/A'}</p>
-                                    <p><strong>End Date:</strong> {trip.endDate ? formatDate(trip.endDate) : 'N/A'}</p>
-                                </>
-                            )}
-                            <p><strong>Spaces:</strong> {trip.spaces || 'Full'}</p>
-                        </TripBox>
-                    )) : <p>No trips available.</p>}
-                </StyledList>
-            </SectionBox>
-
-            {/* Accommodation details */}
-            <SectionBox>
-                <h2>Accommodation:</h2>
-                <div dangerouslySetInnerHTML={{ __html: project.accommodation }} />
-            </SectionBox>
-
-            {/* Itinerary details */}
-            <SectionBox>
-                <h2>Itinerary:</h2>
-                <div dangerouslySetInnerHTML={{ __html: project.itinerary }} />
-            </SectionBox>    
-
-            {/* Supported charity details */}
-            <SectionBox>
-                <h2>Supported Charity:</h2>
-                <p><strong>Name:</strong> {project.supportedCharityName}</p>
-                <p><strong>Website:</strong> <a href={project.supportedCharityWebsite} target="_blank" rel="noopener noreferrer">{project.supportedCharityWebsite}</a></p>
-            </SectionBox>
-
-            {/* List of animals related to the project */}
-            <SectionBox>
-                <h2>Animals:</h2>
-                <StyledList>
-                    {project.animals && project.animals.length > 0 ? project.animals.map((animal, index) => (
-                        <li key={index}>{capitalizeFirstLetter(animal)}</li>
-                    )) : <p>No animals available.</p>}
-                </StyledList>
-            </SectionBox>
-
-            {/* Cost details */}
-            <SectionBox>
-                <h2>Costs:</h2>
-                <StyledList>
-                    {project.costs && project.costs.length > 0 ? project.costs.map((costItem, index) => {
-                        const readableType = capitalizeFirstLetter(costItem.type.replace(/_/g, ' '));
-                        return (
-                            <li key={index}>
-                                <strong>{readableType}:</strong> {costItem.costText || 'Unavailable'}
-                            </li>
-                        );
-                    }) : <p>No costs available.</p>}
-                </StyledList>
-
-                {/* Additional costs */}
-                <h2>Additional Costs:</h2>
-                {project.additionalCosts && project.additionalCosts.length > 0 ? (
+            {project.country && (
+                <SectionBox>
+                    <h2>Country:</h2> <p>{project.country}</p>
+                </SectionBox>
+            )}
+    
+            {project.description && (
+                <SectionBox>
+                    <h2>Description:</h2>
+                    <div dangerouslySetInnerHTML={{ __html: project.description }} />
+                </SectionBox>
+            )}
+    
+            {project.images && project.images.length > 0 && (
+                <SectionBox>
+                    <h2>Images:</h2>
+                    <ImageGallery>
+                        {project.images.map((image, index) => (
+                            <StyledImage key={index} src={image.url} alt={`Image ${index + 1} for ${project.name}`} />
+                        ))}
+                    </ImageGallery>
+                </SectionBox>
+            )}
+    
+            {project.trips && project.trips.length > 0 && (
+                <SectionBox>
+                    <h2>Trips:</h2>
+                    <StyledList>
+                        {project.trips.map((trip, index) => (
+                            <TripBox key={index}>
+                                {trip.startDate && !trip.endDate ? (
+                                    <p>On-going</p>
+                                ) : (
+                                    <>
+                                        <p><strong>Start Date:</strong> {trip.startDate ? formatDate(trip.startDate) : 'N/A'}</p>
+                                        <p><strong>End Date:</strong> {trip.endDate ? formatDate(trip.endDate) : 'N/A'}</p>
+                                    </>
+                                )}
+                                <p><strong>Spaces:</strong> {trip.spaces || 'Full'}</p>
+                            </TripBox>
+                        ))}
+                    </StyledList>
+                </SectionBox>
+            )}
+    
+            {project.accommodation && (
+                <SectionBox>
+                    <h2>Accommodation:</h2>
+                    <div dangerouslySetInnerHTML={{ __html: project.accommodation }} />
+                </SectionBox>
+            )}
+    
+            {project.itinerary && (
+                <SectionBox>
+                    <h2>Itinerary:</h2>
+                    <div dangerouslySetInnerHTML={{ __html: project.itinerary }} />
+                </SectionBox>
+            )}
+    
+            {(project.supportedCharityName || project.supportedCharityWebsite) && (
+                <SectionBox>
+                    <h2>Supported Charity:</h2>
+                    {project.supportedCharityName && <p><strong>Name:</strong> {project.supportedCharityName}</p>}
+                    {project.supportedCharityWebsite && <p><strong>Website:</strong> <a href={project.supportedCharityWebsite} target="_blank" rel="noopener noreferrer">{project.supportedCharityWebsite}</a></p>}
+                </SectionBox>
+            )}
+    
+            {project.animals && project.animals.length > 0 && (
+                <SectionBox>
+                    <h2>Animals:</h2>
+                    <StyledList>
+                        {project.animals.map((animal, index) => (
+                            <li key={index}>{capitalizeFirstLetter(animal)}</li>
+                        ))}
+                    </StyledList>
+                </SectionBox>
+            )}
+    
+            {project.costs && project.costs.length > 0 && (
+                <SectionBox>
+                    <h2>Costs:</h2>
+                    <StyledList>
+                        {project.costs.map((costItem, index) => {
+                            const readableType = capitalizeFirstLetter(costItem.type.replace(/_/g, ' '));
+                            return (
+                                <li key={index}>
+                                    <strong>{readableType}:</strong> {costItem.costText || 'Unavailable'}
+                                </li>
+                            );
+                        })}
+                    </StyledList>
+                </SectionBox>
+            )}
+    
+            {project.additionalCosts && project.additionalCosts.length > 0 && (
+                <SectionBox>
+                    <h2>Additional Costs:</h2>
                     <StyledList>
                         {project.additionalCosts.map((cost, index) => (
                             <li key={index}>{cost}</li>
                         ))}
                     </StyledList>
-                ) : <p>No additional costs available.</p>}
-            </SectionBox>
+                </SectionBox>
+            )}
         </div>
         </Container>
         </>
-    )   
+    )       
 }

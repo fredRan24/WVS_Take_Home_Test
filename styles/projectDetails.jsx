@@ -1,43 +1,48 @@
-//imports
+// Imports
 import styled from 'styled-components';
 
-//Styled Components
+// Styled Components
+// Component for displaying images in a gallery layout
 export const ImageGallery = styled.div`
-display: flex;
-flex-wrap: wrap;
-gap: 16px;  // Provides space between images
-justify-content: center; // Center the images if there are fewer than would fit in a row
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
 `;
 
+// Component for displaying a styled image
 export const StyledImage = styled.img`
-max-width: 300px;
-max-height: 200px;  // Set this as per your needs
-width: auto;  // Ensure width scales
-height: auto; // Ensure the aspect ratio
-border: 1px solid black; 
-border-radius: 8px;  
-box-shadow: 2px 2px 12px;
+    max-width: 300px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border: 1px solid black; 
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px;
 `;
 
+// Component for a section of content with a distinct background and padding
 export const SectionBox = styled.div`
-  padding: 1rem;
-  padding-top: 10px;
-  background-color: #F5A623;  // A darker shade of orange for contrast.
-  border: 2px solid black;  // Bold black border
-  border-radius: 5px;
-  margin: 1rem 0;
+    padding: 1rem;
+    padding-top: 10px;
+    background-color: #F5A623;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 1rem 0;
 `;
 
+// Component for displaying trip details in a box format
 export const TripBox = styled.div`
-  padding: 0.5rem;  // Reduced padding for more compact look.
-  background-color: #FFC085;
-  border-radius: 5px;
-  border: 2px solid black;  // Bold black border
-  margin: 0.5rem 0;  // Reduced margin for more compact look.
+    padding: 0.5rem;
+    background-color: #FFC085;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 0.5rem 0;
 `;
 
+// Component for displaying a list without default bullet points or padding
 export const StyledList = styled.ul`
-  list-style-type: none;  // removes bullet points
-  padding: 0;  // removes any default padding
-  margin: 0;  // removes any default margin
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 `;
