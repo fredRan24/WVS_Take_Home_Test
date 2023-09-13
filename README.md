@@ -4,8 +4,8 @@ Discover World Changing Wildlife and Veterinary Projects and Volunteering opport
 
 ## Required Installs
 
-- next.js (Once npm is installed use "npm install next@latest")
 - npm (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- next.js (Once npm is installed use "npm install next@latest")
 - styled-components (Once npm is installed use "npm install styled-components")
 - react-spinners (Once npm is installed use "npm install react-spinners")
 
